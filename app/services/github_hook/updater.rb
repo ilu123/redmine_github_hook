@@ -208,8 +208,8 @@ module GithubHook
         #                   :identifier   => repository.identifier
         #                 )
         # repo.fetch_changesets
-        #repository.url = full_path;
-        repository.scm.initialize(full_path, nil, nil, nil, nil)
+        repository.url = full_path
+        repository.scm.url = full_path
         repository.save
         repository.fetch_changesets
       else
