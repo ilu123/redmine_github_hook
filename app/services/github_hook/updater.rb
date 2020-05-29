@@ -165,7 +165,7 @@ module GithubHook
 
         # Check root dir
         root_dir = Setting.plugin_redmine_github_hook['redmine_github_hook_basedir'].presence
-        if rootDir
+        if root_dir
           full_path = "#{root_dir}/#{subpath}"
         end
 
