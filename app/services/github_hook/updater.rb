@@ -153,6 +153,7 @@ module GithubHook
       url = "#{repository.url}"
       full_path = "#{url}"
       is_url_repo = false
+      use_root_path = false
       if (full_path =~ /^https?:/)
         is_url_repo = true
 
@@ -166,6 +167,7 @@ module GithubHook
         # Check root dir
         root_dir = Setting.plugin_redmine_github_hook['redmine_github_hook_basedir'].presence
         if root_dir
+          use_root_path = true
           full_path = "#{root_dir}/#{subpath}"
         end
 
@@ -198,20 +200,20 @@ module GithubHook
       puts "#                       Update repo done!                                  #"
       puts "############################################################################"
       
-      tr1 = Time.now
       # Fetch the new changesets into Redmine
       if is_url_repo
-        repo = Repository::Git.new(
-                          :project      => repository.project,
-                          :url          => full_path,
-                          :identifier   => repository.identifier
-                        )
-        repo.fetch_changesets
+        # repo = Repository::Git.new(
+        #                   :project      => repository.project,
+        #                   :url          => full_path,
+        #                   :identifier   => repository.identifier
+        #                 )
+        # repo.fetch_changesets
+        repository.url = full_path;
+        repository.save
+        repository.fetch_changesets
       else
         repository.fetch_changesets
       end
-      tr2 = Time.now
-
     end
   end
 end
