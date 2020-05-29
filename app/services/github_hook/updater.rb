@@ -209,7 +209,7 @@ module GithubHook
         #                 )
         # repo.fetch_changesets
         repository.url = full_path
-        repository.scm.url = full_path
+        repository.scm = nil
         repository.save
         repository.fetch_changesets
       else
