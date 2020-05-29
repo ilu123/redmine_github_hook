@@ -201,7 +201,7 @@ module GithubHook
       puts "############################################################################"
       
       # Fetch the new changesets into Redmine
-      if is_url_repo
+      if is_url_repo && use_root_path
         # repo = Repository::Git.new(
         #                   :project      => repository.project,
         #                   :url          => full_path,
