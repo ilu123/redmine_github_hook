@@ -6,3 +6,6 @@ I added the Settings page to enable redmine git scm url to be set by repository'
 
 ## HowTo
 Please read [HowTo.md](./README_howto.md)
+
+## SS
+![](imgs/intro.png)
