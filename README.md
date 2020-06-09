@@ -9,3 +9,4 @@ Please read [HowTo.md](./README_howto.md)
 
 ## SS
 ![](imgs/intro.png)
+![](imgs/set.png)
