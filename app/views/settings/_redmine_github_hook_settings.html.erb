@@ -1,0 +1,22 @@
+<p>
+  <label for="settings_redmine_github_hook_credentials">Git Account</label>
+  <input type="password" id="settings_redmine_github_hook_credentials" size=80 value="<%= settings['redmine_github_hook_credentials'] %>" name="settings[redmine_github_hook_credentials]" />
+</p>
+
+<p>
+  This is used by cloning the git repository when account is needed.<br>
+  The credentials format should be: <b>username:passowrd</b> or <b>username:token</b>. <br>
+  <b>Note:</b> If your password contains special characters, please use the encoded value, such as: <b>@ => %40</b>
+</p>
+
+<p>
+  <label for="settings_redmine_github_hook_basedir">Git Root Path</label>
+  <input type="text" id="settings_redmine_github_hook_basedir" size=80 value="<%= settings['redmine_github_hook_basedir'] %>" name="settings[redmine_github_hook_basedir]" />
+</p>
+
+<p>
+  You can specify absolute path to it where all cloned repositories locate. <br>
+  <b>Note:</b><br>
+  1. This is only used by projects that use <b>URL</b> as the repository path. <br>
+  2. Make sure the path already exists and is owned by <b>redmine user</b>. <br>
+</p>
